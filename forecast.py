@@ -1,15 +1,17 @@
 import tkinter as tk
 
-def create_column_widgets(column, date_text, weather_text, weather_emoji, temperature):
+def create_column_widgets(column, date_text, weather_text, weather_emoji, temperature, air_quality):
     date_label = tk.Label(column, text=date_text, font=("Helvetica", 18), bg=column.cget("bg")) # so it has the same bg as the column
     weather_emoji_label= tk.Label(column, text=weather_emoji, font=("Helvetica", 40), bg=column.cget("bg"))
     weather_label= tk.Label(column, text=weather_text, font=("Helvetica", 18), bg=column.cget("bg"))
     temperature_label = tk.Label(column, text=temperature, font=("Helvetica", 18), bg=column.cget("bg"))
+    air_quality_label = tk.Label(column, text=air_quality, font=("Helvetica", 18), bg=column.cget("bg"))
     
     date_label.pack(side=tk.TOP, expand=True, pady=10)
     weather_emoji_label.pack(side=tk.TOP, expand=True, pady=10)
     weather_label.pack(side=tk.TOP, expand=True, pady=10)
     temperature_label.pack(side=tk.TOP, expand=True, pady=10)
+    air_quality_label.pack(side=tk.TOP, expand=True, pady=10)
 
 def main():
     window = tk.Tk()
@@ -32,7 +34,7 @@ def main():
     tomorrow_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
     day_after_tomorrow_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-    #create_column_widgets(today_frame, "2025-11-01", "Rainy", "🌧", "-2.0 C")
+    # create_column_widgets(today_frame, "2025-11-01", "Rainy", "🌧", "-2.0 C", "Good")
 
     window.mainloop()    
 
